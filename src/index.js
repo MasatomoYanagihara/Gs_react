@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <div>
+      <Profile />
+      <Hey />
+    </div>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Profile = () => {
+  const name = "yana";
+  const age = 31;
+
+  return (
+    <div>
+      <p>私は{name}</p>
+      <p>{age}歳</p>
+      <p>10年後は{age + 10}歳</p>
+    </div>
+  );
+};
+
+const Hey = () => {
+  return (
+    <div>
+      <p>Hey Yo</p>
+    </div>
+  );
+};
+
+// public/index.htmlのid="root"に<App />をレンダリング
+ReactDOM.render(<App />, document.getElementById("root"));
